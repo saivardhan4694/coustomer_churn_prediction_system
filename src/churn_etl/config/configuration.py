@@ -13,13 +13,13 @@ class ETLConfigurationManager:
     def get_data_extraction_config(self):
 
         config = self.config.data_Extracting
-
         create_directories([config.root_dir])
-        
+
         data_extracting_config = DataExtracting(
 
             root_dir= config.root_dir,
             csv_data= config.csv_data,
+            raw_data= config.raw_data,
             host=config.postgresSQL.host,
             port=config.postgresSQL.port,
             database=config.postgresSQL.database,
@@ -34,11 +34,13 @@ class ETLConfigurationManager:
     def get_data_transformation_config(self):
 
         config = self.config.data_transformation
-
         create_directories([config.root_dir])
 
         data_transformation = DataTransformation(
             root_dir=config.root_dir,
+            input_csv= config.input_csv,
+            transformation_output_csv= config.transformation_output_csv,
+            transformation_status_file=config.transformation_status_file,
         validation_schema = {
             "CustomerID": str(config.validation_schema.CustomerID),
             "Churn": str(config.validation_schema.Churn),
@@ -68,12 +70,13 @@ class ETLConfigurationManager:
     def get_data_laoding_config(self):
         
         config = self.config.data_loading
-
-        create_directories([self.config.root_dir])
-
+        create_directories([config.root_dir])
+        
         data_loading_config = DataLoading(
-            root_dir=self.config.root_dir,
-            etl_output= self.config.etl_output
+            root_dir=config.root_dir,
+            input_csv= config.input_csv,
+            transformation_status_outut= config.transformation_status_outut,
+            etl_output= config.etl_output
         )
 
         return data_loading_config

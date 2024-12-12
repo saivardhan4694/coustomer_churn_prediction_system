@@ -1,8 +1,9 @@
 artifacts_root: ETL_artifacts
 
 data_Extracting:
-  root_dir: artifacts/data_Extracting
+  root_dir: ETL_artifacts/data_Extracting
   csv_data: D:\repositories\coustomer churn prediction\old\E_Commerce_Dataset.csv
+  raw_data: ETL_artifacts/data_Extracting/extracted_data.csv
   postgresSQL:
     host: coustomer-database.cdwoe68s6i9h.us-east-1.rds.amazonaws.com
     port: 5432
@@ -12,7 +13,10 @@ data_Extracting:
     password: l2UfwUm1yUVusJVDEQVA 
 
 data_transformation:
-  root_dir: artifacts/data_transformation
+  root_dir: ETL_artifacts/data_transformation
+  input_csv: ETL_artifacts/data_Extracting/raw_data.csv
+  transformation_output_csv: ETL_artifacts/data_transformation/transformed_data.csv
+  transformation_status_file: ETL_artifacts/data_transformation/transformation_status.txt
   validation_schema: 
     CustomerID: int64
     Churn: int64
@@ -36,6 +40,8 @@ data_transformation:
     CashbackAmount: float64
 
 data_loading:
-  root_dir: artifacts/data_loading
-  etl_output: D:\repositories\coustomer churn prediction\src\churn_etl\data
+  root_dir: Data
+  input_csv: ETL_artifacts/data_transformation/transformed_data.csv
+  transformation_status_outut: ETL_artifacts/data_transformation/transformation_status.txt
+  etl_output: Data/data.csv
 

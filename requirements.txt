@@ -6,3 +6,6 @@ psycopg2
 scikit-learn
 ensure
 sqlalchemy
+dagshub
+dvc
+dvc-s3

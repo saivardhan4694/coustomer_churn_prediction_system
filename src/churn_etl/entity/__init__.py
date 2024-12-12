@@ -6,6 +6,7 @@ import pandas as pd
 class DataExtracting:
     root_dir: Path
     csv_data: Path
+    raw_data: Path
     host: str
     port: int
     database: str
@@ -14,23 +15,17 @@ class DataExtracting:
     password: str
 
 @dataclass
-class DataExtractingArtifact:
-    data_loading_status: bool
-    loaded_data_frame: pd.DataFrame
-
-@dataclass
 class DataTransformation:
     root_dir: Path
+    input_csv: Path
+    transformation_output_csv: Path
+    transformation_status_file: Path
     validation_schema: dict
-
-@dataclass
-class DataTransformationArtifact:
-    validation_status: bool
-    transformation_status: bool
-    transformed_data_frame: pd.DataFrame
 
 @dataclass
 class DataLoading:
     root_dir: Path
+    input_csv: Path
+    transformation_status_outut: Path
     etl_output: Path
     

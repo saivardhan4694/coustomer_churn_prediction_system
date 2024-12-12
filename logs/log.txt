@@ -638,3 +638,415 @@ TypeError: DataTrasformer.handle_missing_values() takes 1 positional argument bu
 [2024-12-11 20:38:09,868: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
 
 =================x]
+[2024-12-12 11:16:20,109: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:16:20,109: ERROR: etl_main: [Errno 2] No such file or directory: 'D:\\repositories\\coustomer churn prediction\\config\\etl_config.yaml']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 10, in <module>
+    dataextractionartifact = data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_extraction_pipeline.py", line 17, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_extraction_pipeline.py", line 11, in initiate_data_extraction
+    config = ETLConfigurationManager()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\config\configuration.py", line 10, in __init__
+    self.config = read_yaml(config_filepath)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\utils\common.py", line 28, in read_yaml
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\utils\common.py", line 21, in read_yaml
+    with open(path_to_yaml) as yamlfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\repositories\\coustomer churn prediction\\config\\etl_config.yaml'
+[2024-12-12 11:17:11,063: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:17:11,063: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:17:11,063: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 11:17:11,063: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-12 11:17:18,313: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 11:17:18,313: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:17:18,313: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 11:17:18,328: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:17:18,328: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 11:17:18,328: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-12 11:17:18,328: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 11:17:18,330: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 11:17:43,320: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 11:17:43,348: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:17:43,348: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 11:17:43,350: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:17:43,350: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 11:17:43,350: ERROR: etl_main: "'ConfigBox' object has no attribute 'root_dir'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 30, in <module>
+    data_loading.initiate_data_Loading()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_loading_pipeline.py", line 17, in initiate_data_Loading
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_loading_pipeline.py", line 13, in initiate_data_Loading
+    data_loading_config = config.get_data_laoding_config()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\config\configuration.py", line 72, in get_data_laoding_config
+    create_directories([self.config.root_dir])
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+[2024-12-12 11:20:02,738: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:20:02,738: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:20:08,612: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 11:20:08,612: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:20:08,612: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 11:20:08,616: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:20:08,616: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 11:20:08,619: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 11:20:33,893: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 11:20:33,927: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:20:33,930: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 11:20:33,930: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:20:33,944: ERROR: data_loader: Error while loading data: Cannot save file into a non-existent directory: 'D:\repositories\coustomer churn prediction\src\churn_etl']
+[2024-12-12 11:20:33,945: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:21:33,583: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:21:33,589: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:21:39,266: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 11:21:39,266: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:21:39,266: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 11:21:39,279: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:21:39,282: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 11:21:39,282: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 11:22:04,246: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 11:22:04,275: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:22:04,275: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 11:22:04,278: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:22:04,278: ERROR: data_loader: Error while loading data: [Errno 13] Permission denied: 'D:\\repositories\\coustomer_churn_prediction_system\\src\\churn_etl\\data']
+[2024-12-12 11:22:04,278: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:23:09,234: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:23:09,238: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:23:15,819: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 11:23:15,819: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:23:15,819: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 11:23:15,819: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:23:15,819: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 11:23:15,819: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 11:23:40,898: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 11:23:40,919: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:23:40,921: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 11:23:40,923: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:23:40,925: ERROR: data_loader: Error while loading data: [Errno 13] Permission denied: 'D:\\repositories\\coustomer_churn_prediction_system\\data']
+[2024-12-12 11:23:40,925: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:32:05,689: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 11:32:05,690: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:32:11,808: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 11:32:11,808: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:32:11,808: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 11:32:11,825: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:32:11,825: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 11:32:11,827: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 11:32:36,866: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 11:32:36,890: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 11:32:36,890: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 11:32:36,894: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 11:32:36,896: ERROR: data_loader: Error while loading data: [Errno 13] Permission denied: 'D:\\repositories\\story generation data\\kids_storeis_data']
+[2024-12-12 11:32:36,896: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 15:10:37,881: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 15:10:37,884: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 15:10:51,510: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 15:10:51,510: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 15:10:51,526: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 15:10:51,526: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 15:10:51,526: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 15:10:51,526: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 15:11:16,215: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 15:11:16,254: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 15:11:16,254: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 15:11:16,257: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 15:11:16,258: INFO: common: Directory Data created successfully]
+[2024-12-12 15:11:16,292: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-12 15:11:16,292: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:18:45,121: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:18:45,125: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:18:51,360: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:18:51,370: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 16:18:51,370: ERROR: etl_main: DataTransformationPipeline.__init__() got an unexpected keyword argument 'artifact']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 19, in <module>
+    data_transformation = DataTransformationPipeline(artifact= dataextractionartifact)
+TypeError: DataTransformationPipeline.__init__() got an unexpected keyword argument 'artifact'
+[2024-12-12 16:19:49,357: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:19:49,357: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:23:08,571: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:23:08,575: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:23:21,245: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:23:21,245: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 16:23:21,245: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:23:21,245: ERROR: etl_main: Cannot open console input buffer for writing]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 81, in transform_data
+    raw_data_frame  = pd.read_csv(self.config.input_csv)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_Extracting/raw_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 20, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 16, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 14, in initiate_data_Transformation
+    data_Transformation.transform_data()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 96, in transform_data
+    with open(self.transformation_status, "w") as file:
+ValueError: Cannot open console input buffer for writing
+[2024-12-12 16:26:39,874: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:26:39,881: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:26:39,881: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:26:39,881: ERROR: etl_main: "'ConfigBox' object has no attribute 'root_dir'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 10, in <module>
+    data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_extraction_pipeline.py", line 16, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_extraction_pipeline.py", line 12, in initiate_data_extraction
+    data_extraction_config = config.get_data_extraction_config()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\config\configuration.py", line 16, in get_data_extraction_config
+    create_directories([self.config.root_dir])
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+[2024-12-12 16:27:32,026: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:27:32,030: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:27:32,030: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:27:32,031: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-12 16:29:22,107: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:29:22,110: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:29:22,110: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:29:22,111: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-12 16:29:29,851: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 16:29:29,851: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:29:29,851: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 16:29:29,855: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:29:29,856: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:29:29,856: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-12 16:29:29,868: INFO: data_transformation: Column mismatch. Expected columns: {'CustomerID': 'int64', 'Churn': 'int64', 'Tenure': 'float64', 'PreferredLoginDevice': 'object', 'CityTier': 'int64', 'WarehouseToHome': 'float64', 'PreferredPaymentMode': 'object', 'Gender': 'object', 'HourSpendOnApp': 'float64', 'NumberOfDeviceRegistered': 'int64', 'PreferedOrderCat': 'object', 'SatisfactionScore': 'int64', 'MaritalStatus': 'object', 'NumberOfAddress': 'int64', 'Complain': 'int64', 'OrderAmountHikeFromlastYear': 'float64', 'CouponUsed': 'float64', 'OrderCount': 'float64', 'DaySinceLastOrder': 'float64', 'CashbackAmount': 'float64'}, Actual columns: Index(['Unnamed: 0', 'CustomerID', 'Churn', 'Tenure', 'PreferredLoginDevice',
+       'CityTier', 'WarehouseToHome', 'PreferredPaymentMode', 'Gender',
+       'HourSpendOnApp', 'NumberOfDeviceRegistered', 'PreferedOrderCat',
+       'SatisfactionScore', 'MaritalStatus', 'NumberOfAddress', 'Complain',
+       'OrderAmountHikeFromlastYear', 'CouponUsed', 'OrderCount',
+       'DaySinceLastOrder', 'CashbackAmount'],
+      dtype='object')]
+[2024-12-12 16:29:29,869: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:29:29,869: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 16:29:29,872: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:29:29,873: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:29:29,873: INFO: common: Directory Data created successfully]
+[2024-12-12 16:29:29,873: ERROR: data_loader: Error while loading data: [Errno 2] No such file or directory: 'ETL_artifacts/data_transformation/transformed_data.csv']
+[2024-12-12 16:29:29,873: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:33:38,493: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:33:38,498: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:33:38,499: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:33:38,499: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-12 16:33:51,380: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 16:33:51,381: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:33:51,381: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 16:33:51,383: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:33:51,383: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:33:51,383: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-12 16:33:51,393: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 16:33:51,397: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 16:34:17,079: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 16:34:17,102: ERROR: etl_main: Cannot open console input buffer for writing]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 89, in transform_data
+    transformed_data.to_csv(self.config.transformation_output_csv, index=False)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'ETL_artifacts\data_tranformation'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 20, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 16, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 14, in initiate_data_Transformation
+    data_Transformation.transform_data()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 96, in transform_data
+    with open(self.transformation_status, "w") as file:
+ValueError: Cannot open console input buffer for writing
+[2024-12-12 16:41:12,164: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-12 16:41:12,171: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:41:12,171: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:41:12,171: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-12 16:41:36,696: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 16:41:36,696: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:41:36,696: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-12 16:41:36,696: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:41:36,696: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:41:36,707: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-12 16:41:36,718: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 16:41:36,721: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 16:42:02,577: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 16:42:02,641: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-12 16:42:02,641: INFO: etl_main: >>>>>>> stage Data Loading Stage started <<<<<<<<]
+[2024-12-12 16:42:02,645: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 16:42:02,645: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 16:42:02,646: INFO: common: Directory Data created successfully]
+[2024-12-12 16:42:02,690: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-12 16:42:02,691: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
+
+=================x]

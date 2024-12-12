@@ -1,4 +1,4 @@
-from src.churn_etl.entity import DataTransformation, DataExtractingArtifact, DataTransformationArtifact
+from src.churn_etl.entity import DataTransformation
 from src.churn_etl.logging.coustom_log import logger
 from pathlib import Path
 import pandas as pd
@@ -8,9 +8,8 @@ from sklearn.impute import IterativeImputer
 from sklearn.ensemble import RandomForestRegressor
 
 class DataTrasformer:
-    def __init__(self, config: DataTransformation, artifact: DataExtractingArtifact):
+    def __init__(self, config: DataTransformation):
         self.config = config
-        self.artifact = artifact
         self.transformation_status = True
 
     def validate_schema(self, df: pd.DataFrame):
@@ -78,9 +77,8 @@ class DataTrasformer:
             return df
 
     def transform_data(self):
-        
         try:
-            raw_data_frame = self.artifact.loaded_data_frame
+            raw_data_frame  = pd.read_csv(self.config.input_csv)
             self.validate_schema(raw_data_frame)
 
             if self.transformation_status:
@@ -88,26 +86,17 @@ class DataTrasformer:
 
             if self.transformation_status:
                 transformed_data = self.handle_missing_values(transformed_data)
-
-            transformation_artifact = DataTransformationArtifact(
-                transformation_status= self.transformation_status,
-                validation_status= True,
-                transformed_data_frame=transformed_data
-            )
-
-            return transformation_artifact
+                transformed_data.to_csv(self.config.transformation_output_csv, index=False)
+                with open(self.config.transformation_status_file, "w") as file:
+                    file.write(str(self.transformation_status))
+            return 
         
         except Exception as e:
             self.transformation_status = False
-
-            transformation_artifact = DataTransformationArtifact(
-                transformation_status= self.transformation_status,
-                validation_status= True,
-                transformed_data_frame=transformed_data
-            )
-        
+            with open(self.transformation_status, "w") as file:
+                file.write(self.transformation_status)
             logger.error(f"Error transforming data: {e}")
-            return transformation_artifact
+            return 
 
 
     

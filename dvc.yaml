@@ -1,0 +1,29 @@
+stages:
+  extract:
+    cmd: python main.py --stage extract
+    deps:
+      - src/churn_etl/pipeline/data_extraction_pipeline.py
+      - src/churn_etl/components/data_extracting.py
+      - main.py
+    outs:
+      - ETL_artifacts/data_Extracting/extracted_data.csv
+
+  transform:
+    cmd: python main.py --stage transform
+    deps:
+      - ETL_artifacts/data_Extracting/extracted_data.csv
+      - src/churn_etl/pipeline/data_transformation_pipeline.py
+      - src/churn_etl/components/data_transformation.py
+      - main.py
+    outs:
+      - ETL_artifacts/data_transformation/transformed_data.csv
+
+  load:
+    cmd: python main.py --stage load
+    deps:
+      - ETL_artifacts/data_transformation/transformed_data.csv
+      - src/churn_etl/pipeline/data_loading_pipeline.py
+      - src/churn_etl/components/data_loader.py
+      - main.py
+    outs:
+      - Data/data.csv

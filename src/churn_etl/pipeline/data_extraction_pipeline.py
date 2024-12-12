@@ -11,7 +11,6 @@ class DataExtractingPipeline:
             config = ETLConfigurationManager()
             data_extraction_config = config.get_data_extraction_config()
             data_extractor= DataExtractor(config=data_extraction_config)
-            data_extractor_artifact = data_extractor.Extract_from_postgresSQL()
-            return data_extractor_artifact
+            data_extractor.Extract_from_postgresSQL()
         except Exception as e:
             raise e
