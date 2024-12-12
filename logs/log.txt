@@ -1,0 +1,640 @@
+[2024-12-11 17:50:30,687: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 17:50:30,694: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 17:50:30,694: ERROR: etl_main: "'ConfigBox' object has no attribute 'artifacts_root'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'artifacts_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'artifacts_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'artifacts_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'artifacts_root'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_root'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 8, in <module>
+    data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 17, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 11, in initiate_data_extraction
+    config = ETLConfigurationManager()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\config\configuration.py", line 11, in __init__
+    create_directories([self.config.artifacts_root])
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_root'"
+[2024-12-11 17:51:08,592: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 17:51:08,596: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 17:51:08,597: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 17:51:08,612: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 17:51:08,612: ERROR: etl_main: DataExtractingArtifact.__init__() missing 2 required positional arguments: 'data_loading_status' and 'loaded_data_frame']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 8, in <module>
+    data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 17, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 13, in initiate_data_extraction
+    data_loader = DataExtractor(config=data_loading_config)
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_extracting.py", line 12, in __init__
+    self.artifact = DataExtractingArtifact()
+TypeError: DataExtractingArtifact.__init__() missing 2 required positional arguments: 'data_loading_status' and 'loaded_data_frame'
+[2024-12-11 17:55:35,901: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 17:55:35,903: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 17:55:35,903: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 17:55:35,903: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 17:55:35,903: ERROR: etl_main: 'DataExtractor' object has no attribute 'load_from_postgresSQL']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 8, in <module>
+    data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 17, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 14, in initiate_data_extraction
+    data_extractor_artifact = data_extractor.load_from_postgresSQL()
+AttributeError: 'DataExtractor' object has no attribute 'load_from_postgresSQL'
+[2024-12-11 17:56:06,330: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 17:56:06,330: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 17:56:06,342: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 17:56:06,342: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 17:56:12,068: ERROR: etl_main: 'NoneType' object has no attribute 'loaded_data_frame']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 8, in <module>
+    data_extraction.initiate_data_extraction()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 17, in initiate_data_extraction
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_extraction_pipeline.py", line 15, in initiate_data_extraction
+    print(data_extractor_artifact.loaded_data_frame.head())
+AttributeError: 'NoneType' object has no attribute 'loaded_data_frame'
+[2024-12-11 18:10:23,749: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 18:10:23,750: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 18:10:23,751: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 18:10:23,751: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 18:10:30,935: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 18:10:30,964: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:02:37,699: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:02:37,701: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:02:37,701: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:02:37,701: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:02:43,750: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:02:43,750: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:02:43,750: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:02:43,753: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:02:43,753: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:02:43,753: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:02:43,753: ERROR: etl_main: "'ConfigBox' object has no attribute 'customerid'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'customerid'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 13, in initiate_data_Transformation
+    data_Transformation_config = config.get_data_transformation_config()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\config\configuration.py", line 43, in get_data_transformation_config
+    "CustomerID": str(config.CustomerID),
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'customerid'"
+[2024-12-11 19:17:16,942: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:17:16,945: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:17:16,945: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:17:16,946: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:17:23,060: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:17:23,060: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:17:23,060: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:17:23,060: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:17:23,060: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:17:23,060: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:17:23,060: ERROR: etl_main: "'ConfigBox' object has no attribute 'customerid'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'customerid'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 13, in initiate_data_Transformation
+    data_Transformation_config = config.get_data_transformation_config()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\config\configuration.py", line 43, in get_data_transformation_config
+    "CustomerID": str(config.CustomerID),
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'customerid'"
+[2024-12-11 19:18:35,381: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:18:35,383: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:18:35,383: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:18:35,383: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:18:41,417: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:18:41,417: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:18:41,417: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:18:41,429: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:18:41,430: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:18:41,430: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:18:41,430: ERROR: etl_main: "'ConfigBox' object has no attribute 'customerid'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'customerid'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 13, in initiate_data_Transformation
+    data_Transformation_config = config.get_data_transformation_config()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\config\configuration.py", line 43, in get_data_transformation_config
+    "CustomerID": str(config.CustomerID),
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'customerid'"
+[2024-12-11 19:19:11,561: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:19:11,564: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:19:11,564: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:19:11,567: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:19:17,565: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:19:17,565: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:19:17,565: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:19:17,565: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:19:17,565: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:19:17,565: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:19:17,565: ERROR: etl_main: "'ConfigBox' object has no attribute 'customerid'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'CustomerID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'CustomerID'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'customerid'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'customerid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 13, in initiate_data_Transformation
+    data_Transformation_config = config.get_data_transformation_config()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\config\configuration.py", line 43, in get_data_transformation_config
+    "CustomerID": str(config.CustomerID),
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'customerid'"
+[2024-12-11 19:35:05,448: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:35:05,451: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:35:05,451: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:35:05,451: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:35:11,784: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:35:11,784: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:35:11,784: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:35:11,784: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:35:11,784: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:35:11,784: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:35:11,784: ERROR: etl_main: 'DataExtractingArtifact' object has no attribute 'data']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_Transformation
+    data_Transformation.transform_data()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_transformation.py", line 32, in transform_data
+    validation_status = self.validate_schema(self.artifact.data)
+AttributeError: 'DataExtractingArtifact' object has no attribute 'data'
+[2024-12-11 19:40:21,218: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:40:21,218: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:40:21,218: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:40:21,218: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:40:27,136: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:40:27,150: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:40:27,150: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:40:27,150: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:40:27,150: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:40:27,150: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:40:27,150: ERROR: etl_main: 'DataTrasformer' object has no attribute 'expected_columns']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 17, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_Transformation
+    data_Transformation.transform_data()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_transformation.py", line 32, in transform_data
+    validation_status = self.validate_schema(self.artifact.loaded_data_frame)
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_transformation.py", line 23, in validate_schema
+    for col, expected_dtype in self.expected_columns.items():
+AttributeError: 'DataTrasformer' object has no attribute 'expected_columns'
+[2024-12-11 19:50:15,036: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 19:50:15,036: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:50:15,036: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:50:15,036: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 19:50:21,611: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 19:50:21,611: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 19:50:21,611: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 19:50:21,611: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 19:50:21,611: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 19:50:21,611: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 19:50:21,611: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 19:50:21,623: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:23:09,075: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:23:09,076: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:23:09,076: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:23:09,076: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:23:14,747: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:23:14,747: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:23:14,747: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:23:14,755: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:23:14,755: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:23:14,755: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:23:14,755: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:23:14,755: ERROR: etl_main: 'NoneType' object has no attribute 'transformed_data_frame']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 20, in <module>
+    print(data_trasformation_artifact.transformed_data_frame.isnull().sum())
+AttributeError: 'NoneType' object has no attribute 'transformed_data_frame'
+[2024-12-11 20:25:02,933: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:25:02,936: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:25:02,937: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:25:02,937: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:25:08,590: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:25:08,590: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:25:08,590: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:25:08,590: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:25:08,590: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:25:08,590: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:25:08,590: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:25:08,590: ERROR: etl_main: 'NoneType' object has no attribute 'transformed_data_frame']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 20, in <module>
+    print(data_trasformation_artifact.transformed_data_frame.isnull().sum())
+AttributeError: 'NoneType' object has no attribute 'transformed_data_frame'
+[2024-12-11 20:27:14,170: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:27:14,170: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:27:14,170: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:27:14,170: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:27:19,927: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:27:19,927: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:27:19,927: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:27:19,930: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:27:19,930: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:27:19,930: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:27:19,930: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:27:19,930: ERROR: etl_main: 'NoneType' object has no attribute 'transformed_data_frame']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 20, in <module>
+    print(data_trasformation_artifact.transformed_data_frame.isnull().sum())
+AttributeError: 'NoneType' object has no attribute 'transformed_data_frame'
+[2024-12-11 20:28:24,130: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:28:24,146: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:28:24,146: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:28:24,146: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:28:30,352: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:28:30,352: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:28:30,352: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:28:30,352: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:28:30,352: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:28:30,352: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:28:30,352: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:28:30,352: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:29:20,608: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:29:20,608: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:29:20,608: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:29:20,608: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:29:26,361: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:29:26,361: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:29:26,361: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:29:26,361: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:29:26,361: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:29:26,361: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:29:26,361: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:29:26,361: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:29:52,981: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:29:52,984: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:29:52,985: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:29:52,985: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:29:58,870: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:29:58,870: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:29:58,870: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:29:58,870: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:29:58,870: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:29:58,870: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:29:58,870: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:29:58,870: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:31:17,188: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:31:17,192: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:31:17,192: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:31:17,193: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:31:23,023: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:31:23,023: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:31:23,023: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:31:23,039: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:31:23,039: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:31:23,039: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:31:23,039: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:31:23,039: ERROR: etl_main: local variable 'transformed_data' referenced before assignment]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_trasformation_artifact = data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 18, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_Transformation
+    data_trasformation_artifact = data_Transformation.transform_data()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_transformation.py", line 81, in transform_data
+    transformed_data = self.handle_duplicates(transformed_data)
+UnboundLocalError: local variable 'transformed_data' referenced before assignment
+[2024-12-11 20:32:00,160: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:32:00,160: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:32:00,160: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:32:00,160: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:32:05,974: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:32:05,974: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:32:05,974: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:32:05,982: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:32:05,982: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:32:05,982: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:32:05,982: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:32:05,997: INFO: data_transformation: No duplicate rows found.]
+[2024-12-11 20:32:05,997: ERROR: etl_main: DataTrasformer.handle_missing_values() takes 1 positional argument but 2 were given]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer churn prediction\etl_main.py", line 19, in <module>
+    data_trasformation_artifact = data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 18, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_Transformation
+    data_trasformation_artifact = data_Transformation.transform_data()
+  File "D:\repositories\coustomer churn prediction\src\churn_etl\components\data_transformation.py", line 82, in transform_data
+    transformed_data = self.handle_missing_values(transformed_data)
+TypeError: DataTrasformer.handle_missing_values() takes 1 positional argument but 2 were given
+[2024-12-11 20:33:46,713: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:33:46,719: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:33:46,719: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:33:46,719: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:33:53,601: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:33:53,601: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:33:53,601: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:33:53,607: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:33:53,607: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:33:53,607: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:33:53,610: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:33:53,613: INFO: data_transformation: No duplicate rows found.]
+[2024-12-11 20:34:19,127: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-11 20:34:19,163: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:37:39,077: INFO: etl_main: >>>>>>> stage Data Extraction Stage started <<<<<<<<]
+[2024-12-11 20:37:39,077: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:37:39,077: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:37:39,077: INFO: common: Directory artifacts/data_Extracting created successfully]
+[2024-12-11 20:37:45,156: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-11 20:37:45,156: INFO: etl_main: >>>>>>> stage Data Extraction Stage completed <<<<<<<<
+
+=================x]
+[2024-12-11 20:37:45,156: INFO: etl_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-11 20:37:45,158: INFO: common: yaml file: D:\repositories\coustomer churn prediction\config\etl_config.yaml loaded successfully]
+[2024-12-11 20:37:45,158: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-11 20:37:45,158: INFO: common: Directory artifacts/data_transformation created successfully]
+[2024-12-11 20:37:45,158: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-11 20:37:45,163: INFO: data_transformation: No duplicate rows found.]
+[2024-12-11 20:38:09,834: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-11 20:38:09,868: INFO: etl_main: >>>>>>> stage Data Transformation Stage completed <<<<<<<<
+
+=================x]
