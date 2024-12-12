@@ -14,7 +14,7 @@ data_Extracting:
 
 data_transformation:
   root_dir: ETL_artifacts/data_transformation
-  input_csv: ETL_artifacts/data_Extracting/raw_data.csv
+  input_csv: ETL_artifacts/data_Extracting/extracted_data.csv
   transformation_output_csv: ETL_artifacts/data_transformation/transformed_data.csv
   transformation_status_file: ETL_artifacts/data_transformation/transformation_status.txt
   validation_schema: 

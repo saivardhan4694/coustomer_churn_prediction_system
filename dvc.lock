@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  extract:
+    cmd: python etl_main.py --stage extract
+    deps:
+    - path: etl_main.py
+      hash: md5
+      md5: 9865631442135f527747015b78e7a2be
+      size: 1382
+    - path: src/churn_etl/components/data_extracting.py
+      hash: md5
+      md5: 330d99a5ae1ada42bde3f2bccc9bb57f
+      size: 1240
+    - path: src/churn_etl/pipeline/data_extraction_pipeline.py
+      hash: md5
+      md5: 387b8b22dd07707307064c18543c147e
+      size: 625
+    outs:
+    - path: ETL_artifacts/data_Extracting/extracted_data.csv
+      hash: md5
+      md5: bbea1f193add4e6918a205cc86aa2b03
+      size: 574160

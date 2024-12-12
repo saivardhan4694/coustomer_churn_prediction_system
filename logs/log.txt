@@ -1050,3 +1050,43 @@ ValueError: Cannot open console input buffer for writing
 [2024-12-12 16:42:02,691: INFO: etl_main: >>>>>>> stage Data Loading Stage completed <<<<<<<<
 
 =================x]
+[2024-12-12 17:15:50,302: INFO: etl_main: >>>>>>> stage extract started <<<<<<<<]
+[2024-12-12 17:15:50,305: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 17:15:50,306: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 17:15:50,306: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-12 17:16:03,859: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-12 17:16:03,861: INFO: etl_main: >>>>>>> stage extract completed <<<<<<<<
+
+=================x]
+[2024-12-12 17:16:06,269: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-12 17:16:06,277: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 17:16:06,278: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 17:16:06,278: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-12 17:16:06,278: ERROR: etl_main: Cannot open console input buffer for writing]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 81, in transform_data
+    raw_data_frame  = pd.read_csv(self.config.input_csv)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "d:\repositories\coustomer_churn_prediction_system\venv\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'ETL_artifacts/data_Extracting/raw_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\etl_main.py", line 16, in run_stage
+    data_transformation.initiate_data_Transformation()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 16, in initiate_data_Transformation
+    raise e
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\pipeline\data_transformation_pipeline.py", line 14, in initiate_data_Transformation
+    data_Transformation.transform_data()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 96, in transform_data
+    with open(self.transformation_status, "w") as file:
+ValueError: Cannot open console input buffer for writing
