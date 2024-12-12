@@ -1,6 +1,6 @@
 stages:
   extract:
-    cmd: python main.py --stage extract
+    cmd: python etl_main.py --stage extract
     deps:
       - src/churn_etl/pipeline/data_extraction_pipeline.py
       - src/churn_etl/components/data_extracting.py
