@@ -18,8 +18,8 @@ stages:
     outs:
     - path: ETL_artifacts/data_Extracting/extracted_data.csv
       hash: md5
-      md5: bbea1f193add4e6918a205cc86aa2b03
-      size: 574160
+      md5: f7f704844854f599047edd65ad2256e0
+      size: 2402167
   transform:
     cmd: python etl_main.py --stage transform
     deps:

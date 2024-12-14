@@ -21,14 +21,14 @@ class DataTrasformer:
             if set(actual_columns) != set(expected_columns):
                 logger.info(f"Column mismatch. Expected columns: {expected_columns}, Actual columns: {actual_columns}")
                 self.transformation_status = False
-                return 
+             
 
             # 2. Check for data type consistency
             for col, expected_dtype in expected_columns.items():
                 if df[col].dtype != expected_dtype:
                     logger.info(f"Column '{col}' has incorrect data type. Expected {expected_dtype}, got {df[col].dtype}")
                     self.transformation_status = False
-                    return 
+                     
 
             logger.info("Schema Validation Passed: Column names and data types match expectations.")
             return 

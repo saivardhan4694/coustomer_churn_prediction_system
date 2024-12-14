@@ -1537,3 +1537,19 @@ TypeError: cannot unpack non-iterable NoneType object
 [2024-12-14 12:21:22,707: INFO: etl_main: >>>>>>> stage load completed <<<<<<<<
 
 =================x]
+[2024-12-14 12:32:18,805: INFO: etl_main: >>>>>>> stage extract started <<<<<<<<]
+[2024-12-14 12:32:18,814: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:32:18,814: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:32:18,814: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-14 12:32:27,233: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-14 12:32:27,237: INFO: etl_main: >>>>>>> stage extract completed <<<<<<<<
+
+=================x]
+[2024-12-14 12:32:30,071: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-14 12:32:30,071: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:32:30,071: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:32:30,071: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-14 12:32:30,136: INFO: data_transformation: Column 'Churn' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:32:30,136: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
+
+=================x]
