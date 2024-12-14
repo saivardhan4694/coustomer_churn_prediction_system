@@ -27,7 +27,7 @@ def run_stage(stage_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3 or sys.argv[1] != "--stage":
-        print("Usage: python main.py --stage [extract|transform|load]")
+        print("Usage: python etl_main.py --stage [extract|transform|load]")
         sys.exit(1)
     
     stage_name = sys.argv[2]

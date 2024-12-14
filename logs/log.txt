@@ -1503,3 +1503,11 @@ TypeError: cannot unpack non-iterable NoneType object
 [2024-12-14 11:10:15,021: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
 
 =================x]
+[2024-12-14 12:18:23,636: INFO: etl_main: >>>>>>> stage extract started <<<<<<<<]
+[2024-12-14 12:18:23,636: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:18:23,636: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:18:23,636: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-14 12:18:30,449: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-14 12:18:30,449: INFO: etl_main: >>>>>>> stage extract completed <<<<<<<<
+
+=================x]
