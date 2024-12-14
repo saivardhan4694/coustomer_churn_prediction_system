@@ -1511,3 +1511,29 @@ TypeError: cannot unpack non-iterable NoneType object
 [2024-12-14 12:18:30,449: INFO: etl_main: >>>>>>> stage extract completed <<<<<<<<
 
 =================x]
+[2024-12-14 12:20:20,437: INFO: etl_main: >>>>>>> stage extract started <<<<<<<<]
+[2024-12-14 12:20:20,450: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:20:20,450: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:20:20,450: INFO: common: Directory ETL_artifacts/data_Extracting created successfully]
+[2024-12-14 12:20:26,783: INFO: data_extracting: data succesfully fetched from customer_churn_data and table customers]
+[2024-12-14 12:20:26,783: INFO: etl_main: >>>>>>> stage extract completed <<<<<<<<
+
+=================x]
+[2024-12-14 12:20:29,413: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-14 12:20:29,431: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:20:29,431: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:20:29,431: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-14 12:20:29,454: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-14 12:20:29,465: INFO: data_transformation: No duplicate rows found.]
+[2024-12-14 12:21:19,809: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-14 12:21:19,943: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
+
+=================x]
+[2024-12-14 12:21:22,607: INFO: etl_main: >>>>>>> stage load started <<<<<<<<]
+[2024-12-14 12:21:22,607: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:21:22,607: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:21:22,620: INFO: common: Directory Data created successfully]
+[2024-12-14 12:21:22,705: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-14 12:21:22,707: INFO: etl_main: >>>>>>> stage load completed <<<<<<<<
+
+=================x]

@@ -1,2 +1,4 @@
 venv/
 old/
+ETL_artifacts/
+Training_artifacts/
