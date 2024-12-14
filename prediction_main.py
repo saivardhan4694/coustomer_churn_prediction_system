@@ -1,11 +1,12 @@
-import mlflow
-import dagshub
+
 from mlflow.tracking import MlflowClient
 from src.churn_prediction.config.configuration import PredictionConfigurationManager
 from src.churn_prediction.components.validator import DataValidator
 import pandas as pd
+import pickle
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path
 
 class Predictor:
     def __init__(self):
@@ -14,20 +15,9 @@ class Predictor:
 
     def load_model(self):
         try:
-            dagshub.init(repo_owner='saivardhan4694', repo_name='coustomer_churn_prediction_system', mlflow=True)
-            client = MlflowClient()
-            model_name="churn_ensemble_model"
-            # Fetch the latest version of the model
-            latest_versions = client.get_latest_versions(model_name, stages=["None", "Staging", "Production"])
-
-            # get the latest version of the mdoel
-            latest_version = latest_versions[0].version
-
-            # Load the model URI for the latest version
-            model_uri = f"models:/{model_name}/{latest_version}"
-            
-            # Load the model
-            model = mlflow.sklearn.load_model(model_uri)
+            model_path = Path(__file__).resolve().parent / "models" / "esemble_churn_model.pkl"
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
             return model
         
         except Exception as e:
@@ -79,3 +69,4 @@ class Predictor:
             return original_data
         else:
             return None
+

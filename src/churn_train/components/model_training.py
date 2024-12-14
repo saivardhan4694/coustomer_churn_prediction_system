@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.ensemble import VotingClassifier
-
+import pickle
 import warnings
 
 # Suppress all warnings
@@ -234,6 +234,9 @@ class ModelTrainer:
                     artifact_path="ensemble_models",
                     registered_model_name="churn_ensemble_model"
                 )
+
+            with open(self.config.training_output, 'wb') as f:
+                pickle.dump(model, f)
 
             mlflow.end_run()
             logger.info("Retrained ensemble model logged and registered successfully.")

@@ -43,6 +43,7 @@ class TrainingConfigurationManager:
         model_tarining_config = ModelTraining(
             training_input= config.training_input,
             experiments= config.experiments,
+            training_output = config.training_output
         )
 
         return model_tarining_config

@@ -4,7 +4,7 @@ import streamlit as st
 from prediction_main import Predictor  
 
 def load_data():
-    data_path = "Data/data.csv"
+    data_path = r"D:\repositories\coustomer_churn_prediction_system\Data\data_git.csv"
     try:
         df = pd.read_csv(data_path)
         return df

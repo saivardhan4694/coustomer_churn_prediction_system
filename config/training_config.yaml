@@ -92,11 +92,12 @@ data_validation:
 Model_training:
   training_input: Training_artifacts/data_ingestion/ingested_data.csv
   experiments:
-    #KNN_Experiment: Churn_KNN_Model
+    KNN_Experiment: Churn_KNN_Model
     Logistic_Regression_Experiment: churn_logistic_reg_model
-    #Random_Forest_Experiment: churn_random_forest_model
-    #SVM_Experiment: churn_svm_model
-    #XGBoost_Experiment: churn_xgboost_model
+    Random_Forest_Experiment: churn_random_forest_model
+    SVM_Experiment: churn_svm_model
+    XGBoost_Experiment: churn_xgboost_model
+  training_output: D:\repositories\coustomer_churn_prediction_system\models\model.pkl
     
   
 

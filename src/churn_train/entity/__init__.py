@@ -18,3 +18,4 @@ class DataValidation:
 class ModelTraining:
     training_input: Path
     experiments: dict
+    training_output: Path
