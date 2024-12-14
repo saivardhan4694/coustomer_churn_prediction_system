@@ -2,9 +2,10 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from prediction_main import Predictor  
+from pathlib import Path
 
 def load_data():
-    data_path = r"D:\repositories\coustomer_churn_prediction_system\Data\data_git.csv"
+    data_path = Path(__file__).resolve().parent / "Data" / "data_git.csv"
     try:
         df = pd.read_csv(data_path)
         return df
