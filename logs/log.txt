@@ -1090,3 +1090,416 @@ Traceback (most recent call last):
   File "D:\repositories\coustomer_churn_prediction_system\src\churn_etl\components\data_transformation.py", line 96, in transform_data
     with open(self.transformation_status, "w") as file:
 ValueError: Cannot open console input buffer for writing
+[2024-12-12 19:25:08,098: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-12 19:25:08,103: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 19:25:08,104: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 19:25:08,104: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-12 19:25:08,124: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-12 19:25:08,130: INFO: data_transformation: No duplicate rows found.]
+[2024-12-12 19:25:39,971: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-12 19:25:40,060: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
+
+=================x]
+[2024-12-12 19:25:41,838: INFO: etl_main: >>>>>>> stage load started <<<<<<<<]
+[2024-12-12 19:25:41,844: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 19:25:41,844: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 19:25:41,844: INFO: common: Directory Data created successfully]
+[2024-12-12 19:25:41,905: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-12 19:25:41,905: INFO: etl_main: >>>>>>> stage load completed <<<<<<<<
+
+=================x]
+[2024-12-12 19:28:34,994: INFO: etl_main: >>>>>>> stage load started <<<<<<<<]
+[2024-12-12 19:28:34,998: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-12 19:28:34,998: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-12 19:28:34,998: INFO: common: Directory Data created successfully]
+[2024-12-12 19:28:35,063: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-12 19:28:35,063: INFO: etl_main: >>>>>>> stage load completed <<<<<<<<
+
+=================x]
+[2024-12-13 16:10:45,068: INFO: training_main: >>>>>>> stage Data ingestion Stage started <<<<<<<<]
+[2024-12-13 16:10:45,069: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 16:10:45,069: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 16:10:45,084: INFO: common: Directory Training_artifacts/data_ingestion created successfully]
+[2024-12-13 16:10:45,186: INFO: data_ingestion: Ingestion completed. Data loaded to csv]
+[2024-12-13 16:10:45,186: INFO: data_ingestion_pipeline: Data ingestion completed successfully]
+[2024-12-13 16:10:45,186: INFO: training_main: >>>>>>> stage Data ingestion Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 16:42:36,037: INFO: training_main: >>>>>>> stage Data Validation Stage started <<<<<<<<]
+[2024-12-13 16:42:36,049: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 16:42:36,052: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 16:42:36,052: INFO: common: Directory Training_artifacts/data_validation created successfully]
+[2024-12-13 16:42:36,075: ERROR: data_validation: Column 'CustomerID' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,075: ERROR: data_validation: Column 'Churn' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,075: ERROR: data_validation: Column 'CityTier' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,076: ERROR: data_validation: Column 'NumberOfDeviceRegistered' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,076: ERROR: data_validation: Column 'SatisfactionScore' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,076: ERROR: data_validation: Column 'NumberOfAddress' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,076: ERROR: data_validation: Column 'Complain' has incorrect data type. Expected int64, got float64]
+[2024-12-13 16:42:36,083: ERROR: data_validation: Column 'PreferredLoginDevice' contains invalid values: ['Mobile Phone' 'Phone' 'Computer']]
+[2024-12-13 16:42:36,089: ERROR: data_validation: Schema Validation Failed. See errors for details.]
+[2024-12-13 16:42:36,091: INFO: data_validation_pipelien: Data Validation completed successfully]
+[2024-12-13 16:42:36,093: INFO: training_main: >>>>>>> stage Data Validation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 16:50:34,008: INFO: training_main: >>>>>>> stage Data Validation Stage started <<<<<<<<]
+[2024-12-13 16:50:34,018: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 16:50:34,018: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 16:50:34,018: INFO: common: Directory Training_artifacts/data_validation created successfully]
+[2024-12-13 16:50:34,042: INFO: data_validation: Schema Validation Passed: Column names, data types, and constraints match expectations.]
+[2024-12-13 16:50:34,042: INFO: data_validation_pipelien: Data Validation completed successfully]
+[2024-12-13 16:50:34,042: INFO: training_main: >>>>>>> stage Data Validation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 16:55:55,791: INFO: training_main: >>>>>>> stage Data Validation Stage started <<<<<<<<]
+[2024-12-13 16:55:55,803: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 16:55:55,804: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 16:55:55,805: INFO: common: Directory Training_artifacts/data_validation created successfully]
+[2024-12-13 16:55:55,834: INFO: data_validation: Schema Validation Passed: Column names, data types, and constraints match expectations.]
+[2024-12-13 16:55:55,834: INFO: data_validation_pipelien: Data Validation completed successfully]
+[2024-12-13 16:55:55,834: INFO: training_main: >>>>>>> stage Data Validation Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 17:52:16,852: INFO: training_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-13 17:52:16,864: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 17:52:16,864: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 17:52:16,864: INFO: common: Directory Training_artifacts/data_transformation created successfully]
+[2024-12-13 17:52:16,919: ERROR: data_transformation_pipeline: Error in initiating data Transformation pipeline: 'NoneType' object has no attribute 'select_dtypes']
+[2024-12-13 17:52:16,919: ERROR: training_main: 'NoneType' object has no attribute 'select_dtypes']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 31, in <module>
+    data_transformation_pipeline.initiate_data_transformation()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_transformation
+    data_transformer.transform_data()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\data_transformation.py", line 55, in transform_data
+    features = self.scale_numerical_features(features)
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\data_transformation.py", line 33, in scale_numerical_features
+    numerical_cols = features.select_dtypes(include=['float64', 'int64']).columns
+AttributeError: 'NoneType' object has no attribute 'select_dtypes'
+[2024-12-13 17:53:31,693: INFO: training_main: >>>>>>> stage Data Transformation Stage started <<<<<<<<]
+[2024-12-13 17:53:31,704: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 17:53:31,704: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 17:53:31,704: INFO: common: Directory Training_artifacts/data_transformation created successfully]
+[2024-12-13 17:53:31,750: ERROR: data_transformation_pipeline: Error in initiating data Transformation pipeline: 'numpy.ndarray' object has no attribute 'select_dtypes']
+[2024-12-13 17:53:31,750: ERROR: training_main: 'numpy.ndarray' object has no attribute 'select_dtypes']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 31, in <module>
+    data_transformation_pipeline.initiate_data_transformation()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\data_transformation_pipeline.py", line 15, in initiate_data_transformation
+    data_transformer.transform_data()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\data_transformation.py", line 57, in transform_data
+    features = self.scale_numerical_features(features)
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\data_transformation.py", line 35, in scale_numerical_features
+    numerical_cols = features.select_dtypes(include=['float64', 'int64']).columns
+AttributeError: 'numpy.ndarray' object has no attribute 'select_dtypes'
+[2024-12-13 19:15:58,969: INFO: _client: HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2024-12-13 19:15:59,520: INFO: _client: HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2024-12-13 19:16:00,076: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:16:00,082: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 19:16:00,787: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 19:16:01,603: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:16:01,608: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 19:16:01,608: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 19:30:05,134: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:30:05,134: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 19:30:05,684: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 19:30:06,168: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:30:06,168: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 19:30:06,168: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 19:33:38,776: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:33:38,788: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 19:33:39,389: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 19:33:39,852: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 19:33:39,852: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 19:33:39,852: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:11:41,750: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:11:41,768: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:11:41,768: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:11:42,268: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:11:42,280: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:11:42,804: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:11:43,303: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:11:43,319: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:11:43,319: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:12:00,143: INFO: model_training: model Churn_KNN_Model loaded succesfully.]
+[2024-12-13 23:12:00,143: INFO: model_training: initiating Churn_KNN_Model training]
+[2024-12-13 23:12:16,899: ERROR: model_training_pipeline: Error in initiating model training pipeline: register_model() missing 1 required positional argument: 'model_uri']
+[2024-12-13 23:12:16,900: ERROR: training_main: register_model() missing 1 required positional argument: 'model_uri']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 177, in train_models
+    self.model_trainer(model_name=str(model),
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 142, in model_trainer
+    mlflow.register_model(name=model_name)
+TypeError: register_model() missing 1 required positional argument: 'model_uri'
+[2024-12-13 23:17:46,758: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:17:46,758: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:17:46,771: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:17:47,265: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:17:47,279: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:17:47,799: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:17:48,284: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:17:48,284: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:17:48,284: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:17:59,068: INFO: model_training: model Churn_KNN_Model loaded succesfully.]
+[2024-12-13 23:17:59,068: INFO: model_training: initiating Churn_KNN_Model training]
+[2024-12-13 23:18:16,330: INFO: model_training: Churn_KNN_Model training completed. metrics and artifacts are loaded to MLflow experiment KNN_Experiment]
+[2024-12-13 23:18:27,448: INFO: model_training: model churn_logistic_reg_model loaded succesfully.]
+[2024-12-13 23:18:27,448: INFO: model_training: initiating churn_logistic_reg_model training]
+[2024-12-13 23:18:46,336: INFO: model_training: churn_logistic_reg_model training completed. metrics and artifacts are loaded to MLflow experiment Logistic_Regression_Experiment]
+[2024-12-13 23:18:46,336: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-13 23:18:46,338: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 23:20:53,689: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:20:53,689: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:20:53,689: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:20:54,239: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:20:54,239: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:20:54,755: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:20:55,237: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:20:55,240: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:20:55,240: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:21:00,381: INFO: model_training: model Churn_KNN_Model loaded succesfully.]
+[2024-12-13 23:21:00,381: INFO: model_training: initiating Churn_KNN_Model training]
+[2024-12-13 23:21:17,043: ERROR: model_training_pipeline: Error in initiating model training pipeline: register_model() missing 1 required positional argument: 'name']
+[2024-12-13 23:21:17,043: ERROR: training_main: register_model() missing 1 required positional argument: 'name']
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 179, in train_models
+    self.model_trainer(model_name=str(model),
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 144, in model_trainer
+    mlflow.register_model(model_uri=model_uri)
+TypeError: register_model() missing 1 required positional argument: 'name'
+[2024-12-13 23:21:56,356: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:21:56,356: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:21:56,356: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:21:56,855: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:21:56,858: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:21:57,360: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:21:57,831: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:21:57,831: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:21:57,831: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:22:03,945: INFO: model_training: model Churn_KNN_Model loaded succesfully.]
+[2024-12-13 23:22:03,945: INFO: model_training: initiating Churn_KNN_Model training]
+[2024-12-13 23:22:22,101: INFO: model_training: Churn_KNN_Model training completed. metrics and artifacts are loaded to MLflow experiment KNN_Experiment]
+[2024-12-13 23:22:33,269: INFO: model_training: model churn_logistic_reg_model loaded succesfully.]
+[2024-12-13 23:22:33,269: INFO: model_training: initiating churn_logistic_reg_model training]
+[2024-12-13 23:22:54,108: INFO: model_training: churn_logistic_reg_model training completed. metrics and artifacts are loaded to MLflow experiment Logistic_Regression_Experiment]
+[2024-12-13 23:22:54,109: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-13 23:22:54,110: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-13 23:25:12,969: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:25:12,975: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:25:12,982: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:25:13,537: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:25:13,540: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:25:14,132: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:25:14,666: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:25:14,668: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:25:14,670: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-13 23:26:43,738: ERROR: model_training: Error in getting latest version of model: API request to https://dagshub.com/saivardhan4694/coustomer_churn_prediction_system.mlflow/api/2.0/mlflow/model-versions/get-download-uri failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /saivardhan4694/coustomer_churn_prediction_system.mlflow/api/2.0/mlflow/model-versions/get-download-uri?name=Churn_KNN_Model&version=2 (Caused by ResponseError('too many 500 error responses'))]
+[2024-12-13 23:26:43,740: ERROR: model_training_pipeline: Error in initiating model training pipeline: cannot unpack non-iterable NoneType object]
+[2024-12-13 23:26:43,740: ERROR: training_main: cannot unpack non-iterable NoneType object]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 179, in train_models
+    self.model_trainer(model_name=str(model),
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 72, in model_trainer
+    model_uri, model = self.load_latest_version_of_model(model_name= model_name)
+TypeError: cannot unpack non-iterable NoneType object
+[2024-12-13 23:28:48,218: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-13 23:28:48,233: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-13 23:28:48,234: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-13 23:28:48,806: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:28:48,811: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-13 23:28:49,356: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-13 23:28:49,875: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-13 23:28:49,877: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-13 23:28:49,877: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:21:42,774: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:21:42,790: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:21:42,790: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:21:43,678: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:21:43,679: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:21:44,233: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:21:44,763: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:21:44,763: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:21:44,763: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:22:56,102: ERROR: model_training: Error in getting latest version of model: API request to https://dagshub.com/saivardhan4694/coustomer_churn_prediction_system.mlflow/api/2.0/mlflow/model-versions/get-download-uri failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /saivardhan4694/coustomer_churn_prediction_system.mlflow/api/2.0/mlflow/model-versions/get-download-uri?name=Churn_KNN_Model&version=2 (Caused by ResponseError('too many 500 error responses'))]
+[2024-12-14 10:22:56,102: ERROR: model_training_pipeline: Error in initiating model training pipeline: cannot unpack non-iterable NoneType object]
+[2024-12-14 10:22:56,102: ERROR: training_main: cannot unpack non-iterable NoneType object]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 179, in train_models
+    self.model_trainer(model_name=str(model),
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 72, in model_trainer
+    model_uri, model = self.load_latest_version_of_model(model_name= model_name)
+TypeError: cannot unpack non-iterable NoneType object
+[2024-12-14 10:34:44,076: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:34:44,092: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:34:44,093: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:34:44,701: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:34:44,708: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:34:45,268: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:34:45,905: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:34:45,910: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:34:45,911: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:34:59,448: INFO: model_training: model churn_random_forest_model loaded succesfully.]
+[2024-12-14 10:34:59,448: INFO: model_training: initiating churn_random_forest_model training]
+[2024-12-14 10:35:24,978: INFO: model_training: churn_random_forest_model training completed. metrics and artifacts are loaded to MLflow experiment Random_Forest_Experiment]
+[2024-12-14 10:35:24,986: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-14 10:35:24,986: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-14 10:35:52,070: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:35:52,073: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:35:52,073: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:35:52,650: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:35:52,650: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:35:53,294: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:35:53,829: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:35:53,831: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:35:53,833: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:36:00,117: INFO: model_training: model churn_random_forest_model loaded succesfully.]
+[2024-12-14 10:36:00,117: INFO: model_training: initiating churn_random_forest_model training]
+[2024-12-14 10:36:23,506: INFO: model_training: churn_random_forest_model training completed. metrics and artifacts are loaded to MLflow experiment Random_Forest_Experiment]
+[2024-12-14 10:36:23,508: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-14 10:36:23,508: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-14 10:36:48,314: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:36:48,331: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:36:48,331: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:36:48,911: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:36:48,914: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:36:49,498: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:36:50,138: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:36:50,141: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:36:50,142: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:38:46,031: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:38:46,047: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:38:46,047: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:38:46,669: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:38:46,683: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:38:47,214: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:38:47,746: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:38:47,749: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:38:47,749: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:38:53,354: INFO: model_training: model churn_random_forest_model loaded succesfully.]
+[2024-12-14 10:38:53,354: INFO: model_training: initiating churn_random_forest_model training]
+[2024-12-14 10:39:16,407: INFO: model_training: churn_random_forest_model training completed. metrics and artifacts are loaded to MLflow experiment Random_Forest_Experiment]
+[2024-12-14 10:39:16,410: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-14 10:39:16,410: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-14 10:41:45,185: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 10:41:45,203: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 10:41:45,203: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 10:41:45,762: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:41:45,764: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 10:41:46,380: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 10:41:46,900: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 10:41:46,900: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 10:41:46,900: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 10:41:51,987: INFO: model_training: model churn_svm_model loaded succesfully.]
+[2024-12-14 10:41:51,987: INFO: model_training: initiating churn_svm_model training]
+[2024-12-14 10:42:13,712: INFO: model_training: churn_svm_model training completed. metrics and artifacts are loaded to MLflow experiment SVM_Experiment]
+[2024-12-14 10:42:13,718: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-14 10:42:13,718: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]
+[2024-12-14 11:01:10,978: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 11:01:10,988: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 11:01:10,988: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 11:01:11,567: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:11,573: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 11:01:12,127: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:12,710: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:12,712: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 11:01:12,712: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 11:01:21,224: ERROR: model_training: Error in getting latest version of model: No module named 'xgboost']
+[2024-12-14 11:01:21,225: ERROR: model_training_pipeline: Error in initiating model training pipeline: cannot unpack non-iterable NoneType object]
+[2024-12-14 11:01:21,225: ERROR: training_main: cannot unpack non-iterable NoneType object]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 190, in train_models
+    self.model_trainer(model_name=str(model),
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 72, in model_trainer
+    model_uri, model = self.load_latest_version_of_model(model_name= model_name)
+TypeError: cannot unpack non-iterable NoneType object
+[2024-12-14 11:01:38,906: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 11:01:38,908: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 11:01:38,908: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 11:01:39,490: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:39,490: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 11:01:40,050: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:40,659: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:01:40,662: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 11:01:40,662: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 11:03:56,842: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 11:03:56,858: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 11:03:56,858: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 11:03:57,473: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:03:57,475: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 11:03:58,067: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 11:03:58,597: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:03:58,598: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 11:03:58,598: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 11:04:04,999: INFO: model_training: model Churn_KNN_Model loaded succesfully.]
+[2024-12-14 11:04:04,999: INFO: model_training: initiating Churn_KNN_Model training]
+[2024-12-14 11:04:32,948: INFO: model_training: Churn_KNN_Model training completed. metrics and artifacts are loaded to MLflow experiment KNN_Experiment]
+[2024-12-14 11:04:43,766: INFO: model_training: model churn_logistic_reg_model loaded succesfully.]
+[2024-12-14 11:04:43,768: INFO: model_training: initiating churn_logistic_reg_model training]
+[2024-12-14 11:05:13,585: INFO: model_training: churn_logistic_reg_model training completed. metrics and artifacts are loaded to MLflow experiment Logistic_Regression_Experiment]
+[2024-12-14 11:05:24,738: INFO: model_training: model churn_random_forest_model loaded succesfully.]
+[2024-12-14 11:05:24,738: INFO: model_training: initiating churn_random_forest_model training]
+[2024-12-14 11:06:05,386: INFO: model_training: churn_random_forest_model training completed. metrics and artifacts are loaded to MLflow experiment Random_Forest_Experiment]
+[2024-12-14 11:06:10,809: INFO: model_training: model churn_svm_model loaded succesfully.]
+[2024-12-14 11:06:10,813: INFO: model_training: initiating churn_svm_model training]
+[2024-12-14 11:06:41,162: INFO: model_training: churn_svm_model training completed. metrics and artifacts are loaded to MLflow experiment SVM_Experiment]
+[2024-12-14 11:06:52,345: ERROR: model_training: Error in getting latest version of model: No module named 'xgboost']
+[2024-12-14 11:06:52,347: ERROR: model_training_pipeline: Error in initiating model training pipeline: cannot unpack non-iterable NoneType object]
+[2024-12-14 11:06:52,347: ERROR: training_main: cannot unpack non-iterable NoneType object]
+Traceback (most recent call last):
+  File "D:\repositories\coustomer_churn_prediction_system\training_main.py", line 40, in <module>
+    model_trianing_pipeline.initiate_model_training()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\pipeline\model_training_pipeline.py", line 15, in initiate_model_training
+    model_trainer.train_models()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 190, in train_models
+    self.set_auto_register_model()
+  File "D:\repositories\coustomer_churn_prediction_system\src\churn_train\components\model_training.py", line 72, in model_trainer
+    def model_trainer(self, model_name, experiment_name,
+TypeError: cannot unpack non-iterable NoneType object
+[2024-12-14 11:09:32,824: INFO: training_main: >>>>>>> stage Model training Stage started <<<<<<<<]
+[2024-12-14 11:09:32,838: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\training_config.yaml loaded successfully]
+[2024-12-14 11:09:32,838: INFO: common: Directory Training_artifacts created successfully]
+[2024-12-14 11:09:33,412: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:09:33,415: INFO: helpers: Accessing as saivardhan4694]
+[2024-12-14 11:09:33,979: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/saivardhan4694/coustomer_churn_prediction_system "HTTP/1.1 200 OK"]
+[2024-12-14 11:09:34,566: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-12-14 11:09:34,575: INFO: helpers: Initialized MLflow to track repo "saivardhan4694/coustomer_churn_prediction_system"]
+[2024-12-14 11:09:34,576: INFO: helpers: Repository saivardhan4694/coustomer_churn_prediction_system initialized!]
+[2024-12-14 11:09:48,728: INFO: model_training: model churn_logistic_reg_model loaded succesfully.]
+[2024-12-14 11:09:48,728: INFO: model_training: initiating churn_logistic_reg_model training]
+[2024-12-14 11:10:15,020: INFO: model_training: churn_logistic_reg_model training completed. metrics and artifacts are loaded to MLflow experiment Logistic_Regression_Experiment]
+[2024-12-14 11:10:15,021: INFO: model_training_pipeline: model training completed successfully]
+[2024-12-14 11:10:15,021: INFO: training_main: >>>>>>> stage Model training Stage completed <<<<<<<<
+
+=================x]

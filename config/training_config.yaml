@@ -1,0 +1,102 @@
+artifacts_root: Training_artifacts
+
+data_ingestion:
+  root_dir: Training_artifacts/data_ingestion
+  data_input: D:\repositories\coustomer_churn_prediction_system\Data\data.csv
+  data_output: Training_artifacts/data_ingestion/ingested_data.csv
+
+data_validation:
+  root_dir: Training_artifacts/data_validation
+  validation_input: Training_artifacts/data_ingestion/ingested_data.csv
+  validation_schema:
+    CustomerID:
+      dtype: float64
+      constraints:
+        min: 1
+    Churn:
+      dtype: float64
+      constraints:
+        allowed_values: [0, 1]
+    Tenure:
+      dtype: float64
+      constraints:
+        min: 0
+    PreferredLoginDevice:
+      dtype: object
+      constraints:
+        allowed_values: ["Mobile Phone", "Phone", "Computer"]
+    CityTier:
+      dtype: float64
+      constraints:
+        allowed_values: [1, 2, 3]
+    WarehouseToHome:
+      dtype: float64
+      constraints:
+        min: 3
+    PreferredPaymentMode:
+      dtype: object
+    Gender:
+      dtype: object
+      constraints:
+        allowed_values: ["Male", "Female"]
+    HourSpendOnApp:
+      dtype: float64
+      constraints:
+        min: 0
+    NumberOfDeviceRegistered:
+      dtype: float64
+      constraints:
+        min: 1
+    PreferedOrderCat:
+      dtype: object
+    SatisfactionScore:
+      dtype: float64
+      constraints:
+        min: 1
+        max: 5
+    MaritalStatus:
+      dtype: object
+      constraints:
+        allowed_values: ["Single", "Married", "Divorced"]
+    NumberOfAddress:
+      dtype: float64
+      constraints:
+        min: 1
+    Complain:
+      dtype: float64
+      constraints:
+        allowed_values: [0, 1]
+    OrderAmountHikeFromlastYear:
+      dtype: float64
+      constraints:
+        min: 0
+    CouponUsed:
+      dtype: float64
+      constraints:
+        min: 0
+    OrderCount:
+      dtype: float64
+      constraints:
+        min: 0
+    DaySinceLastOrder:
+      dtype: float64
+      constraints:
+        min: 0
+    CashbackAmount:
+      dtype: float64
+      constraints:
+        min: 0
+
+  validation_output: Training_artifacts/data_validation/validation_report.txt
+
+Model_training:
+  training_input: Training_artifacts/data_ingestion/ingested_data.csv
+  experiments:
+    #KNN_Experiment: Churn_KNN_Model
+    Logistic_Regression_Experiment: churn_logistic_reg_model
+    #Random_Forest_Experiment: churn_random_forest_model
+    #SVM_Experiment: churn_svm_model
+    #XGBoost_Experiment: churn_xgboost_model
+    
+  
+

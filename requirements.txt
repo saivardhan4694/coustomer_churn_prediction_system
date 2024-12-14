@@ -9,3 +9,6 @@ sqlalchemy
 dagshub
 dvc
 dvc-s3
+xgboost
+imbalanced-learn
+mlflow
