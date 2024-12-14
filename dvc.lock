@@ -25,16 +25,16 @@ stages:
     deps:
     - path: ETL_artifacts/data_Extracting/extracted_data.csv
       hash: md5
-      md5: bbea1f193add4e6918a205cc86aa2b03
-      size: 574160
+      md5: f7f704844854f599047edd65ad2256e0
+      size: 2402167
     - path: etl_main.py
       hash: md5
       md5: 4435f2aabdc229cd4888b12abc0ed986
       size: 1386
     - path: src/churn_etl/components/data_transformation.py
       hash: md5
-      md5: 8e23833679133323b9d6b686e606bf9e
-      size: 4564
+      md5: e2c754076538dbc239c8568a6de5a5d6
+      size: 4548
     - path: src/churn_etl/pipeline/data_transformation_pipeline.py
       hash: md5
       md5: e97db613408264d8f157b442e05ec62a
@@ -42,15 +42,15 @@ stages:
     outs:
     - path: ETL_artifacts/data_transformation/transformed_data.csv
       hash: md5
-      md5: fee8fffb2bc87e34c1cf43a86ec5ae97
-      size: 686081
+      md5: 5f3dd905f71ed7785bc514c117127e9a
+      size: 2917783
   load:
     cmd: python etl_main.py --stage load
     deps:
     - path: ETL_artifacts/data_transformation/transformed_data.csv
       hash: md5
-      md5: fee8fffb2bc87e34c1cf43a86ec5ae97
-      size: 686081
+      md5: 5f3dd905f71ed7785bc514c117127e9a
+      size: 2917783
     - path: etl_main.py
       hash: md5
       md5: 4435f2aabdc229cd4888b12abc0ed986
@@ -66,5 +66,5 @@ stages:
     outs:
     - path: Data/data.csv
       hash: md5
-      md5: fff7b9ca9c9d1ace14039db716998992
-      size: 686081
+      md5: 5acaa13129dc60a19dcc8bcad0dc41ec
+      size: 2916184

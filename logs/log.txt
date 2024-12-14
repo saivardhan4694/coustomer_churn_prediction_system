@@ -1567,3 +1567,21 @@ TypeError: cannot unpack non-iterable NoneType object
 [2024-12-14 12:48:51,816: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
 
 =================x]
+[2024-12-14 12:59:27,634: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-14 12:59:27,647: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:59:27,647: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:59:27,647: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-14 12:59:27,706: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-14 12:59:27,723: INFO: data_transformation: Found 239 duplicate rows. Removing duplicates.]
+[2024-12-14 13:02:41,853: INFO: data_transformation: misssing values handled succesfully.]
+[2024-12-14 13:02:42,029: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
+
+=================x]
+[2024-12-14 13:02:43,356: INFO: etl_main: >>>>>>> stage load started <<<<<<<<]
+[2024-12-14 13:02:43,359: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 13:02:43,359: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 13:02:43,359: INFO: common: Directory Data created successfully]
+[2024-12-14 13:02:43,531: INFO: data_loader: data succesfully loaded to Data/data.csv]
+[2024-12-14 13:02:43,531: INFO: etl_main: >>>>>>> stage load completed <<<<<<<<
+
+=================x]
