@@ -6,7 +6,7 @@ from src.churn_etl.utils.common import read_yaml, create_directories
 
 class PredictionConfigurationManager:
     def __init__(self) -> None:
-        self.config = read_yaml(Path(r"D:\repositories\coustomer_churn_prediction_system\config\prediction_config.yaml"))
+        self.config = read_yaml(Path(__file__).resolve().parent.parent.parent.parent / "config" / "prediction_config.yaml")
         create_directories([self.config.artifacts_root])
 
     def get_data_validation_config(self):
