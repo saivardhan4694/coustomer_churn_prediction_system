@@ -2,7 +2,7 @@ python-box
 PyYAML
 pandas
 numpy
-psycopg2
+psycopg2-binary==2.9.10 
 scikit-learn
 ensure
 sqlalchemy
