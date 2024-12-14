@@ -1,27 +1,81 @@
+import mlflow
+import dagshub
+from mlflow.tracking import MlflowClient
+from src.churn_prediction.config.configuration import PredictionConfigurationManager
+from src.churn_prediction.components.validator import DataValidator
 import pandas as pd
-from sqlalchemy import create_engine
+from imblearn.over_sampling import SMOTE
+from sklearn.preprocessing import StandardScaler
 
-# Database connection details
-host = "coustomer-database.cdwoe68s6i9h.us-east-1.rds.amazonaws.com"
-port = "5432"
-database = "customer_churn_data"
-table_name = "customers"
-user = "postgres"
-password = "l2UfwUm1yUVusJVDEQVA"
+class Predictor:
+    def __init__(self):
+        self.configuration_manager = PredictionConfigurationManager()
+        
 
-# Path to the CSV file you downloaded
-csv_file_path = r"C:\Users\user\Downloads\corrected_data_with_missing_values.csv"
+    def load_model(self):
+        try:
+            dagshub.init(repo_owner='saivardhan4694', repo_name='coustomer_churn_prediction_system', mlflow=True)
+            client = MlflowClient()
+            model_name="churn_ensemble_model"
+            # Fetch the latest version of the model
+            latest_versions = client.get_latest_versions(model_name, stages=["None", "Staging", "Production"])
 
-# Create a database connection string
-connection_string = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+            # get the latest version of the mdoel
+            latest_version = latest_versions[0].version
 
-# Create the database engine
-engine = create_engine(connection_string)
+            # Load the model URI for the latest version
+            model_uri = f"models:/{model_name}/{latest_version}"
+            
+            # Load the model
+            model = mlflow.sklearn.load_model(model_uri)
+            return model
+        
+        except Exception as e:
+            raise
+    
+    def validate_data(self, dataframe: pd.DataFrame):
+        prediction_config = self.configuration_manager.get_data_validation_config()
+        validator = DataValidator(config=prediction_config)
+        status = validator.validate_schema(df=dataframe)
+        return status
+    
+    def preprocess_data(self, data: pd.DataFrame):
+        preprocess_config = self.configuration_manager.get_model_inference_config()
+        print("preprocessing for predictions")
+        # 1. One-hot encode categorical variables
+        categorical_cols = ['PreferredLoginDevice', 'PreferredPaymentMode', 'Gender', 'PreferedOrderCat', 'MaritalStatus']
+        data = pd.get_dummies(data, columns=categorical_cols, drop_first=True)
 
-# Read the CSV file into a DataFrame
-df = pd.read_csv(csv_file_path)
+        # 2. Add missing columns with default value 0 to match training columns
+        for col in preprocess_config.columns:
+            if col not in data.columns:
+                data[col] = 0
+        
+        features = data[preprocess_config.columns]
 
-# Upload the DataFrame to the PostgreSQL table
-df.to_sql(table_name, engine, if_exists='append', index=False)
-
-print("Data upload completed successfully.")
+        # 3. Scale numerical features
+        scaler = StandardScaler()
+        numerical_cols = features.select_dtypes(include=['float64', 'int64']).columns
+        features[numerical_cols] = scaler.fit_transform(features[numerical_cols])
+        print("preprocessing done.")
+        return features
+            
+    def predict(self, data: pd.DataFrame):
+        model = self.load_model()
+        validation_status = self.validate_data(dataframe=data)
+        print(validation_status)
+        if validation_status:
+            original_data = data.copy()
+            
+            # Preprocess the data
+            data = self.preprocess_data(data)
+            
+            # Make predictions
+            predictions = model.predict(data)
+            
+            # Attach predictions to the original DataFrame
+            original_data['Predictions'] = predictions
+            
+            return original_data
+        else:
+            return None

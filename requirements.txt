@@ -12,3 +12,7 @@ dvc-s3
 xgboost
 imbalanced-learn
 mlflow
+seaborn
+plotly
+streamlit
+statsmodels
