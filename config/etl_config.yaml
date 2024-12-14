@@ -19,20 +19,20 @@ data_transformation:
   transformation_status_file: ETL_artifacts/data_transformation/transformation_status.txt
   validation_schema: 
     CustomerID: int64
-    Churn: int64
+    Churn: float64
     Tenure: float64
     PreferredLoginDevice: object
-    CityTier: int64
+    CityTier: float64
     WarehouseToHome: float64
     PreferredPaymentMode: object
     Gender: object
     HourSpendOnApp: float64
-    NumberOfDeviceRegistered: int64
+    NumberOfDeviceRegistered: float64
     PreferedOrderCat: object
-    SatisfactionScore: int64
+    SatisfactionScore: float64
     MaritalStatus: object
-    NumberOfAddress: int64
-    Complain: int64
+    NumberOfAddress: float64
+    Complain: float64
     OrderAmountHikeFromlastYear: float64
     CouponUsed: float64
     OrderCount: float64

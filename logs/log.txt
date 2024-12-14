@@ -1553,3 +1553,17 @@ TypeError: cannot unpack non-iterable NoneType object
 [2024-12-14 12:32:30,136: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
 
 =================x]
+[2024-12-14 12:48:51,740: INFO: etl_main: >>>>>>> stage transform started <<<<<<<<]
+[2024-12-14 12:48:51,756: INFO: common: yaml file: D:\repositories\coustomer_churn_prediction_system\config\etl_config.yaml loaded successfully]
+[2024-12-14 12:48:51,756: INFO: common: Directory ETL_artifacts created successfully]
+[2024-12-14 12:48:51,756: INFO: common: Directory ETL_artifacts/data_transformation created successfully]
+[2024-12-14 12:48:51,806: INFO: data_transformation: Column 'Churn' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,806: INFO: data_transformation: Column 'CityTier' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,806: INFO: data_transformation: Column 'NumberOfDeviceRegistered' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,814: INFO: data_transformation: Column 'SatisfactionScore' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,814: INFO: data_transformation: Column 'NumberOfAddress' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,814: INFO: data_transformation: Column 'Complain' has incorrect data type. Expected int64, got float64]
+[2024-12-14 12:48:51,814: INFO: data_transformation: Schema Validation Passed: Column names and data types match expectations.]
+[2024-12-14 12:48:51,816: INFO: etl_main: >>>>>>> stage transform completed <<<<<<<<
+
+=================x]
